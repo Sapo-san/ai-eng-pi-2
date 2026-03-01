@@ -217,4 +217,3 @@ share/
 logs/
 testing.ipynb
 chroma_db/
-metrics/

@@ -1,6 +1,6 @@
 [
     {
-        "system_answer": "En Aperture Science, si sufres un accidente laboral, este se clasifica como \"oportunidad de aprendizaje\" si fue causado por una explosión espontánea, un fallo en la compuerta gravitacional o contacto con materia extradimensional. No se proporciona un procedimiento específico para manejar el accidente, pero se sugiere que se considere como una oportunidad para aprender.",
+        "system_answer": "En Aperture Science, si sufres un accidente laboral, se redefine el concepto de “accidente”. Si el evento fue causado por una explosión espontánea, un fallo en la compuerta gravitacional o contacto con materia extradimensional, se clasifica como “oportunidad de aprendizaje”.",
         "chunks_related": [
             "8",
             "7"
@@ -10,8 +10,7 @@
     {
         "system_answer": "El sueldo se paga el día 30 de cada mes, o el siguiente día hábil en caso de que el 30 coincida con alguno.",
         "chunks_related": [
-            "2",
-            "5"
+            "2"
         ],
         "user_question": "Holaa no tengo claro cuando pagan el sueldo aca"
     },
