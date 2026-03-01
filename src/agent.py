@@ -12,15 +12,18 @@ from src.log_gen import log
 from src.pricing_estimates import MODEL_PRICING, MODEL_EMBEDDING_PRICING, guardar_metricas, guardar_metricas_embedding
 from openai import OpenAI
 import tiktoken
-from pydantic import BaseModel
+from pydantic import BaseModel, StringConstraints
+from typing import Annotated
 import chromadb
 
 from openai.types.responses import ResponseInputItemParam
 
+
+
+NumericString = Annotated[str, StringConstraints(pattern=r"^\d+$")]
 class Answer(BaseModel):
-    #user_question: str
     system_answer: str
-    chunks_related: str
+    chunks_related: list[NumericString]
 
 class Agent:
     '''
@@ -41,7 +44,7 @@ class Agent:
     # Prices (USD) per 1M tokens
     # [15-02-2026] Fuente: https://developers.openai.com/api/docs/pricing
 
-    def __init__(self):
+    def __init__(self, chroma_collection_name):
         '''
         Inicializa el modelo.
         '''
@@ -67,13 +70,12 @@ class Agent:
                 self.system_prompt = prompt_file.read()
 
             # Cargar ChromaDB para el uso del agente
-            COLLECTION_NAME=str(getenv('COLLECTION_NAME'))
             CHROMADB_PATH=str(getenv('CHROMADB_PATH'))
             
             self.db_collection = chromadb.PersistentClient(
                 path=CHROMADB_PATH
             ).get_or_create_collection(
-                name=COLLECTION_NAME
+                name=chroma_collection_name
                 )
             
             log('Agente inicializado exitosamente.')
@@ -128,7 +130,7 @@ class Agent:
 
     """ def validar_respuesta(self, response, retries):
         '''
-        Pendiente
+        Se implementó validacion de campos con Pydantic.
         '''
         return True """
         
@@ -178,6 +180,20 @@ class Agent:
                 }
             )
         return unified_results
+
+    def consultar_por_embedding_id(self, ids):
+        '''
+        Recibe una lista de IDs, devuelve una lista con los fragmentos
+        almacenados en base de datos
+        '''
+
+        results = self.db_collection.get(
+            ids=ids,
+            include=["documents"]
+        )
+
+        return results["documents"]
+
 
     def onetime_query_model(self, mensaje: str):
         '''
@@ -252,10 +268,15 @@ class Agent:
 
             if not valid_answer:
                 retries += 1
-
+        
         if not valid_answer and retries >= 3:
             log(f'No se pudo generar una respuesta válida', 'error')
             return dumps({ 'Error': 'No se pudo generar una respuesta válida'})
         
+        # Transformar respuesta a JSON y añadir campo user_question
+        # Imprimir respuesta del agente
+        respuesta = loads(response.output_text)
+        respuesta['user_question'] = mensaje
+        
         # Retornar texto de la respuesta si es válido
-        return response.output_text
+        return respuesta

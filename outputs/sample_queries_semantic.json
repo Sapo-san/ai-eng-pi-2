@@ -1,0 +1,28 @@
+[
+    {
+        "system_answer": "En caso de sufrir un accidente laboral en Aperture Science, este se clasifica como \"oportunidad de aprendizaje\" si fue causado por una explosión espontánea, fallo en la compuerta gravitacional o contacto con materia extradimensional. Si el evento ocurre dentro de una cámara de pruebas, será archivado como parte de la información recolectada. Las compensaciones disponibles incluyen reemplazo cibernético parcial, reasignación a tareas menos móviles y conmemoración en una placa. Si sobrevives, puedes solicitar una consulta médica, aunque el robot médico está calibrado para empatía mínima.",
+        "chunks_related": [
+            "4"
+        ],
+        "user_question": "Tengo una duda, que debo hacer en caso de accidente?"
+    },
+    {
+        "system_answer": "El sueldo se paga el día 30 de cada mes, o el siguiente día hábil si el 30 coincide con eventos como una falla estructural masiva, una invasión de neurotoxinas, un colapso de reactor de portal, o un evento menor de extinción. En tales casos, tu pago será diferido hasta que la economía vuelva a existir.",
+        "chunks_related": [
+            "2"
+        ],
+        "user_question": "Holaa no tengo claro cuando pagan el sueldo aca"
+    },
+    {
+        "system_answer": "No tengo informacion sobre eso en mi base de conocimientos",
+        "chunks_related": [],
+        "user_question": "¿Qué debo hacer en caso de terremoto? No veo señalética de evacuacion en las instalaciones."
+    },
+    {
+        "system_answer": "En caso de una invasión robótica interna, permanece inmóvil. Las torretas respetan objetivos quietos. A veces.",
+        "chunks_related": [
+            "8"
+        ],
+        "user_question": "Nos invaden robots! Ayuda!"
+    }
+]

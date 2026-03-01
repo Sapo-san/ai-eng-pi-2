@@ -43,6 +43,13 @@ def semantic_chunking(document):
     return chunks
 
 if __name__ == '__main__':
-    # Documento pequeño de prueba
-    test_document = '# Titulo\n## pregunta 1\nrespuesta1\n## pregunta 2\nrespuesta 2\n'
-    print(semantic_chunking(test_document))
+    # Ejecución de prueba (Ejecutar este modulo desde carpeta raiz del proyecto)
+    test_document = open('./data/faq_document.md', mode='r').read()
+    
+    chunks = semantic_chunking(test_document)
+
+    for c in chunks:
+        print('#'*30)
+        print(c)
+
+    print(f'Cantidad de chunks: {len(chunks)}')

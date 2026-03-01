@@ -8,4 +8,4 @@ Contexto:
 
 campos para responder:
 - system_answer: respuesta para el usuario basada en el contexto.
-- chunks_related: id del o los chunks que son relevantes para la respuesta. si ninguno es relevante dejar como string vacío.
+- chunks_related: id del o los chunks que son relevantes para la respuesta.
