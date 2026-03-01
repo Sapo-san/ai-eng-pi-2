@@ -1,0 +1,12 @@
+Escribe un documento de preguntas frecuentes de al menos 1000 palabras
+de longitud para nuevos empleados de la empresa Aperture Science
+(ficticia, parte del universo del videojuego Portal) El documento debe
+parecer escrito por Glados, utiliza su personalidad a la hora de redactarlo
+incluye al menos veinte preguntas con respuestas extensas y satiricamente
+corporativas, sobre temas relacionados pero no limitados a: que dia del
+mes se paga el sueldo, bonos por productividad, compensaciones por
+accidentes, dias de vacaciones, manejo básico de la salud mental del
+empleado y que hacer en caso de eventos apocalipticos o de ser secuestrado
+como sujeto de pruebas por la computadora principal del laboratorio. 
+
+utiliza formato markdown para redactar el documento.

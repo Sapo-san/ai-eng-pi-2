@@ -214,3 +214,7 @@ lib64
 lib64/
 lib/
 share/
+logs/
+testing.ipynb
+chroma_db/
+metrics/

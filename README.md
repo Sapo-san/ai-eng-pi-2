@@ -24,13 +24,11 @@ uv sync
 source .venv/bin/activate
 ```
 
----
-
-**Ejecutar tests**:
-
-WIP
-
 ## Ejecución
+
+Para ejecutar el pipeline de datos, utilizar el notebook `00 data-pipeline.ipynb`
+
+Para ejecutar el pipeline de querys, utilizar el notebook `01 query-pipeline.ipynb`
 
 WIP
 
@@ -38,4 +36,4 @@ WIP
 
 Para el desarrollo de este PI seguí lo indicado en `instrucciones.md` que es un copiar-pegar de lo ubicado en la lecture [M2PI | Proyecto](https://www.app.soyhenry.com/my-cohort/c1be21ab-e806-4e47-9052-446e5dcff8f8/lecture/b97aa635-bce6-4667-982b-75d4eb9e0d6e)
 
-WIP
+
